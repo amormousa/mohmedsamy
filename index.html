@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
+    <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Qwitcher+Grypen:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style/all.min.css" />
+    <link rel="stylesheet" href="style/normalize.css" />
+    <link rel="stylesheet" href="style/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="text-[#302e4d] overflow-x-hidden font-Outfit leading-8 dark:bg-darkTheme dark:text-white"
+  >
+    <div
+      class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden"
+    >
+      <img src="images/header-bg-color.png" class="w-full" alt="" />
+    </div>
+    <nav
+      class="w-full fixed px-5 lg:px-8 xl:px-[5%] flex items-center justify-between z-50 text-xl"
+    >
+      <h3
+        class="mt-[-5px] cursor-pointer font-extrabold text-5xl  ml-2"
+        style="font-family: 'Clicker Script', cursive"
+      >
+        mohmed samy<span class="text-teal-600 text-7xl">.</span>
+      </h3>
+      <ul
+        class="items-center hidden gap-6 px-12 py-3 text-center bg-white rounded-full shadow-sm bg-opacity-80 md:flex lg:gap-8 w-fit font-Ovo dark:border-white/50 dark:bg-transparent dark:border"
+      >
+        <li><a href="#home" class="transition hover:text-teal-600">Home</a></li>
+        <li><a href="#about" class="transition hover:text-teal-600">About</a></li>
+        <li><a href="#skills" class="transition hover:text-teal-600">Skills</a></li>
+        <li><a href="#portfolio" class="transition hover:text-teal-600">Portfolio</a></li>
+        <li><a href="#contact" class="transition hover:text-teal-600">Contact</a></li>
+      </ul>
+      <div class="flex items-center gap-4">
+        <button onclick="toggleTheme()" aria-label="Toggle dark mode">
+          <img src="images/moon_icon.png" class="w-6 dark:hidden" alt="" />
+          <img src="images/sun_icon.png" class="hidden w-6 dark:block" alt="" />
+        </button>
+        <a
+          href="#contact"
+          class="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-Ovo dark:border-white/50"
+          >Hire Me
+          <img src="images/arrow-icon.png" alt="arrow" class="w-3 dark:hidden" />
+          <img src="images/arrow-icon-dark.png" alt="arrow" class="hidden w-3 dark:block"
+        /></a>
+        <button class="block ml-3 md:hidden" onclick="openMenu()" aria-label="Open menu">
+          <img src="images/menu-black.png" class="w-6 dark:hidden" alt="" aria-hidden="true" />
+          <img src="images/menu-white.png" class="hidden w-6 dark:block" alt="" aria-hidden="true" />
+        </button>
+      </div>
+      <ul
+        id="sideMenu"
+        class="fixed top-0 z-50 flex flex-col w-64 h-screen gap-4 px-10 py-20 transition duration-500 md:hidden -right-64 button-0 bg-[#eee] font-Ovo dark:bg-[#161b22] dark:text-white"
+      >
+        <div
+          class="absolute p-1 border border-gray-800 dark:border-gray-300 border-1 right-6 top-6"
+          onclick="closeMenu()"
+        >
+          <img src="images/close-black.png" alt="" class="w-5 cursor-pointer dark:hidden" />
+          <img src="images/close-white.png" alt="" class="hidden w-5 cursor-pointer dark:block" />
+        </div>
+        <li class="duration-300 cursor-pointer hover:text-teal-600">
+          <i class="mr-2 fa-solid fa-house"></i>
+          <a href="#home" onclick="closeMenu()">Home</a>
+        </li>
+        <li class="duration-300 cursor-pointer hover:text-teal-600">
+          <i class="mr-2 fa-solid fa-user"></i>
+          <a href="#about" onclick="closeMenu()">About</a>
+        </li>
+        <li class="duration-300 cursor-pointer hover:text-teal-600">
+          <i class="mr-2 fa-solid fa-briefcase"></i>
+          <a href="#skills" onclick="closeMenu()">Skills</a>
+        </li>
+        <li class="duration-300 cursor-pointer hover:text-teal-600">
+          <i class="mr-2 fa-solid fa-briefcase"></i>
+          <a href="#portfolio" onclick="closeMenu()">Portfolio</a>
+        </li>
+        <li class="duration-300 cursor-pointer hover:text-teal-600">
+          <i class="mr-2 fa-solid fa-envelope"></i>
+          <a href="#contact" onclick="closeMenu()">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- -------------------start header--------------- -->
+    <div
+      id="home"
+      class="flex flex-col items-center justify-center w-11/12 h-screen max-w-4xl mx-auto text-center"
+    >
+      <div class="flex flex-col-reverse items-center w-full gap-20 my-20 lg:flex-row sm:">
+        <div>
+          <h3
+            class="flex items-center justify-center mt-24 gap-2 lg:mt-5 lg:mb-5 mb-2 text-[16px] lg:text-xl font-Ovo"
+          >
+            Hi! I am Mohmed Samy
+            <img src="images/hand-icon.png" alt="" class="w-6" />
+          </h3>
+          <h1
+            id="typing-text"
+            class="mt-3 text-2xl text-teal-600 lg:text-4xl font-Ovo profession"
+          ></h1>
+          <p class="max-w-2xl mx-auto lg:mt-5 mt-3 lg:text-xl text-[16px] font-Ovo">
+            With a custom Web development and creative design, I create Web that
+            inspire my clients, and increase their sales by reaching the target
+            audience efficiently.
+          </p>
+          <div class="flex flex-row items-center justify-center gap-4 mt-10 sm:flex-row">
+            <a
+              href="#contact"
+              class="flex items-center gap-2 lg:px-10 py-3 text-white border rounded-full lg:text-[18px] text-[16px] px-8 bg-gradient-to-r from-[#176161] to-[#45B08C]"
+            >
+              Hire Me
+              <img src="images/right-arrow-white.png" alt="" loading="lazy" class="w-4" />
+            </a>
+            <a
+              href="./mohmedsamy.pdf"
+              download
+              class="flex items-center gap-2 lg:px-10 py-3 transition ease-in-out lg:text-[18px] text-[16px] bg-white border border-gray-500 px-8 rounded-full dark:text-black"
+              target="_blank"
+            >
+              My CV
+              <img src="images/download-icon.png" alt="" class="w-4 text-white" loading="lazy" />
+            </a>
+          </div>
+        </div>
+        <div class="relative mx-auto rounded-full abdo max-w-max">
+          <img
+            src="./images/profile-img.jpg"
+            alt="Profile Image"
+            class="w-40 h-40 max-w-full -mb-64 rounded-full lg:h-auto lg:w-80 lg:mb-10 drop-shadow-lg shadow-lg-teal-600 image"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- -------------------end header--------------- -->
+
+    <!-- -------- ---- start about------------ -->
+    <div id="about" class="w-full p-10 px-[12%] bg-zinc-50 py-10 dark:bg-darkTheme">
+      <h2 class="-mb-5 text-5xl text-center lg:mt-10 font-Ovo">About Me</h2>
+      <div class="flex flex-col items-center w-full gap-20 my-20 lg:flex-row">
+        <div class="relative hidden mx-auto max-w-max md:block">
+          <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+          <lottie-player
+            src="https://lottie.host/fb1aa416-4b89-45f8-bb33-9590ee1a5fcc/dKaYnmJyVA.json"
+            background="##FFFFFF"
+            speed="1"
+            style="width: 300px; height: 500px"
+            loop
+            autoplay
+            direction="1"
+            mode="normal"
+          ></lottie-player>
+        </div>
+        <div class="flex-1 content">
+          <p class="max-w-2xl mb-10 font-Ovo">
+            I am an experienced Web Developer with over a professional
+            expertise in the field. Throughout my career, I will contribute in
+            the privilege of collaborating with prestigious organizations,
+            contributing to their success and growth.
+          </p>
+          <ul class="grid max-w-2xl grid-cols-1 gap-6 sm:grid-cols-3">
+            <li
+              class="relative group border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-teal-50 hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000] text-center flex items-center flex-col dark:border-white dark:hover:shadow-white dark:hover:bg-[#151b23f2]"
+            >
+              <i class="w-10 text-2xl text-teal-600 fa-solid fa-graduation-cap"></i>
+              <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Education</h3>
+              <p class="text-sm text-gray-600 dark:text-white/80">Faculty Of Computers And Information</p>
+              <div class="absolute bottom-full mb-2 w-48 px-3 py-2 text-sm text-white bg-black rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                MTI University — degree, 2 years, GPA: 3.7
+              </div>
+            </li>
+            <li
+              class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-teal-50 hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000] text-center flex items-center flex-col dark:border-white dark:hover:shadow-white dark:hover:bg-[#151b23f2]"
+            >
+              <i class="w-10 text-2xl text-teal-600 fa-solid fa-code"></i>
+              <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Languages</h3>
+              <p class="text-sm text-gray-600 dark:text-white/80">JS, PHP, Dart, C++, Python</p>
+            </li>
+            <li
+              class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-teal-50 hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000] text-center flex items-center flex-col dark:border-white dark:hover:shadow-white dark:hover:bg-[#151b23f2]"
+            >
+              <i class="w-10 text-2xl text-teal-600 fa-solid fa-briefcase"></i>
+              <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Projects</h3>
+              <p class="text-sm text-gray-600 dark:text-white/80">20+ Projects</p>
+            </li>
+          </ul>
+          <h4 class="my-6 font-bold text-gray-700 font-Ovo dark:text-white/85">Tools I Use:</h4>
+          <ul class="flex gap-1 mx- wrap item-s-center sm:gap-5 lg:mx-0">
+            <li class="flex items-center justify-center w-12 duration-500 border rounded cursor-pointer sm:w-14 aspect-square border-grey-400-lg hover:-translate-y-1.5 hover:shadow-[2px_2px_2px_#eee] hover:opacity-90 hover:rotate-[360deg]">
+              <img src="images/vscode.png" alt="" />
+            </li>
+            <li class="flex items-center justify-center w-12 duration-500 border rounded cursor-pointer sm:w-14 aspect-square border-grey-400-lg hover:-translate-y-1.5 hover:shadow-[2px_2px_2px_#eee] hover:opacity-90 hover:rotate-[360deg]">
+              <img src="images/firebase.png" alt="" />
+            </li>
+            <li class="flex items-center justify-center w-12 duration-500 border rounded cursor-pointer sm:w-14 aspect-square border-grey-400-lg hover:-translate-y-1.5 hover:shadow-[2px_2px_2px_#eee] hover:opacity-90 hover:rotate-[360deg]">
+              <img src="images/android-studio-icon.webp" alt="" />
+            </li>
+            <li class="flex items-center justify-center w-12 duration-500 border rounded cursor-pointer sm:w-14 aspect-square border-grey-400-lg hover:-translate-y-1.5 hover:shadow-[2px_2px_2px_#eee] hover:opacity-90 hover:rotate-[360deg]">
+              <img src="images/figma.png" alt="" />
+            </li>
+            <li class="flex items-center justify-center w-12 duration-500 border rounded cursor-pointer sm:w-14 aspect-square border-grey-400-lg hover:-translate-y-1.5 hover:shadow-[2px_2px_2px_#eee] hover:opacity-90 hover:rotate-[360deg]">
+              <img src="images/git.png" alt="" />
+            </li>
+            <li class="flex items-center justify-center w-12 duration-500 border rounded cursor-pointer sm:w-14 aspect-square border-grey-400-lg hover:-translate-y-1.5 hover:shadow-[2px_2px_2px_#eee] hover:opacity-90 hover:rotate-[360deg]">
+              <img src="images/Postman.webp" alt="" />
+            </li>
+            <li class="flex items-center justify-center w-12 duration-500 border rounded cursor-pointer sm:w-14 aspect-square border-grey-400-lg hover:-translate-y-1.5 hover:shadow-[2px_2px_2px_#eee] hover:opacity-90 hover:rotate-[360deg]">
+              <img src="images/mongodb-icon.svg" alt="" />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- ---------end about ------------>
+
+    <!-- ---------start skills ------------>
+    <div id="skills" class="relative py-16 mt-0 lg:mt-10 our-skills">
+      <h2 class="text-5xl text-center font-Ovo">My Skills</h2>
+      <div class="container flex flex-col items-center gap-8 mx-auto lg:gap-28 md:flex-row md:space-x-5">
+        <div class="w-full p-3 space-y-6 skills md:w-1/2">
+          <div>
+            <div class="mb-8 skill">
+              <h2 class="mt-5 text-2xl font-bold text-center lg:mb-5 lg:mt-0 text-dark font-Ovo">Technical Skills</h2>
+              <h3 class="flex justify-between mb-2 text-xl font-semibold text-gray-700 font-Ovo dark:text-white/80">
+                JS <span class="text-gray-500 font-Outfit dark:text-white/80">95%</span>
+              </h3>
+              <div class="the-progress bg-gray-200 rounded-full h-2.5 overflow-hidden">
+                <span class="block h-full bg-[#2196F3] rounded-full" data-width="95%"></span>
+              </div>
+            </div>
+            <div class="mb-8 skill">
+              <h3 class="flex justify-between mb-2 text-xl font-semibold text-gray-700 font-Ovo dark:text-white/80">
+                Web <span class="text-gray-500 font-Outfit dark:text-white/80">95%</span>
+              </h3>
+              <div class="the-progress bg-gray-200 rounded-full h-2.5 overflow-hidden">
+                <span class="block h-full bg-[#2196F3] rounded-full bg-teal" data-width="95%"></span>
+              </div>
+            </div>
+            <div class="mb-8 skill">
+              <h3 class="flex justify-between mb-2 text-xl font-semibold text-gray-700 font-Ovo dark:text-white/80">
+                Problem Solving <span class="text-gray-500 font-Outfit dark:text-white/80">90%</span>
+              </h3>
+              <div class="the-progress bg-gray-200 rounded-full h-2.5 overflow-hidden">
+                <span class="block h-full bg-[#00A300] rounded-full" data-width="90%"></span>
+              </div>
+            </div>
+            <div class="mb-8 skill">
+              <h3 class="flex justify-between mb-2 text-xl font-semibold text-gray-700 font-Ovo dark:text-white/80">
+                Figma <span class="text-gray-500 font-Outfit dark:text-white/80">80%</span>
+              </h3>
+              <div class="the-progress bg-gray-200 rounded-full h-2.5 overflow-hidden">
+                <span class="block h-full rounded-full bg-[#f7ba14]" data-width="80%"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="py-10 text-gray-800">
+          <h2 class="mb-10 text-2xl font-bold text-center font-Ovo dark:text-white">Professional Skills</h2>
+          <div class="grid grid-cols-2 gap-x-24 gap-y-5">
+            <div class="flex flex-col items-center text-center skill-circle">
+              <div class="relative flex items-center justify-center mb-4 h-28 w-28">
+                <svg class="absolute inset-0 w-full h-full transform rotate-[-90deg]">
+                  <circle cx="50%" cy="50%" r="40%" stroke-width="8" stroke="#e5e7eb" fill="none"></circle>
+                  <circle cx="50%" cy="50%" r="40%" stroke-width="8" stroke="#2196F3" fill="none" stroke-dasharray="251.2" data-percentage="0.96" style="stroke-dashoffset: calc(251.2 * (1 - 0.96)); transition: stroke-dashoffset 2s;"></circle>
+                </svg>
+                <span class="text-2xl font-bold dark:text-white/80">96%</span>
+              </div>
+              <p class="-mt-4 font-semibold text-[18px] font-Ovo dark:text-white/80">Creativity</p>
+            </div>
+            <div class="flex flex-col items-center text-center skill-circle">
+              <div class="relative flex items-center justify-center mb-4 h-28 w-28">
+                <svg class="absolute inset-0 w-full h-full transform rotate-[-90deg]">
+                  <circle cx="50%" cy="50%" r="40%" stroke-width="8" stroke="#e5e7eb" fill="none"></circle>
+                  <circle cx="50%" cy="50%" r="40%" stroke-width="8" stroke="#2196F3" fill="none" stroke-dasharray="251.2" data-percentage="0.96" style="stroke-dashoffset: calc(251.2 * (1 - 0.96)); transition: stroke-dashoffset 2s;"></circle>
+                </svg>
+                <span class="text-2xl font-bold dark:text-white/80">96%</span>
+              </div>
+              <p class="-mt-4 text-[18px] font-semibold font-Ovo dark:text-white/80">Team Work</p>
+            </div>
+            <div class="flex flex-col items-center text-center skill-circle">
+              <div class="relative flex items-center justify-center mb-4 h-28 w-28">
+                <svg class="absolute inset-0 w-full h-full transform rotate-[-90deg]">
+                  <circle cx="50%" cy="50%" r="40%" stroke-width="8" stroke="#e5e7eb" fill="none"></circle>
+                  <circle cx="50%" cy="50%" r="40%" stroke-width="8" stroke="#2196F3" fill="none" stroke-dasharray="251.2" data-percentage="0.95" style="stroke-dashoffset: calc(251.2 * (1 - 0.95)); transition: stroke-dashoffset 2s;"></circle>
+                </svg>
+                <span class="text-2xl font-bold dark:text-white/80">95%</span>
+              </div>
+              <p class="-mt-4 text-[18px] font-semibold font-Ovo dark:text-white/80">Communication</p>
+            </div>
+            <div class="flex flex-col items-center text-center skill-circle">
+              <div class="relative flex items-center justify-center mb-4 h-28 w-28">
+                <svg class="absolute inset-0 w-full h-full transform rotate-[-90deg]">
+                  <circle cx="50%" cy="50%" r="40%" stroke-width="8" stroke="#e5e7eb" fill="none"></circle>
+                  <circle cx="50%" cy="50%" r="40%" stroke-width="8" stroke="#2196F3" fill="none" stroke-dasharray="251.2" data-percentage="0.95" style="stroke-dashoffset: calc(251.2 * (1 - 0.95)); transition: stroke-dashoffset 2s;"></circle>
+                </svg>
+                <span class="text-2xl font-bold dark:text-white/80">95%</span>
+              </div>
+              <p class="-mt-4 text-[18px] font-semibold font-Ovo dark:text-white/80">Negotiation</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---------start portfolio ------------>
+      <div id="portfolio" class="w-full lg:p-10 bg-zinc-50 p-2 lg:px-[12%] px-[3%] py-10 dark:bg-darkTheme">
+        <h2 class="text-5xl text-center font-Ovo lg:mt-8">My Portfolio</h2>
+        <p class="mx-auto mt-5 mb-12 text-center font-Ovo">
+          Welcome To My Web App Development Portfolio! Explore A Collection
+          Of Projects Showcasing My Expertise In Mobile App Development.
+        </p>
+        <span class="block mt-5 -mb-5 text-xl font-bold lg:ml-2 font-Ovo">My Latest Work:</span>
+        <div class="grid grid-cols-1 gap-6 my-10 sm:grid-cols-2 md:grid-cols-3">
+          <div class="relative p-1 mb-3 overflow-hidden bg-white rounded-sm group">
+            <img src="images/i/hum.png" class="w-[120%] h-auto rounded-sm" alt="work-01" />
+            <div class="absolute inset-0 flex items-center justify-center text-xl font-bold text-white transition-transform transform -translate-y-full bg-teal-400 rounded-md bg-opacity-60 group-hover:translate-y-0">
+              <div class="content">
+                <p class="mb-1 text-center">hangman-game</p>
+                <p class="mt-3 text-center">Soon In Web</p>
+                <a href="https://github.com/mohmedsamy"><i class="flex items-center justify-center text-3xl text-center fa-brands fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="relative p-1 mb-3 overflow-hidden bg-white rounded-sm group">
+            <img src="images/i/wath.png" class="w-[120%] h-auto rounded-sm" alt="work-01" />
+            <div class="absolute inset-0 flex items-center justify-center text-xl font-bold text-white transition-transform transform -translate-y-full bg-teal-400 rounded-md bg-opacity-60 group-hover:translate-y-0">
+              <div class="content">
+                <p class="mb-1 text-center">WeatherApp-main</p>
+                <a href="https://github.com/mohmedsamy"><i class="flex items-center justify-center mt-3 text-3xl text-center fa-brands fa-github text-[#000]"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="relative p-1 mb-3 overflow-hidden bg-white rounded-sm group">
+            <img src="images/i/login.png" class="w-[120%] h-auto rounded-sm" alt="work-01" />
+            <div class="absolute inset-0 flex items-center justify-center text-xl font-bold text-white transition-transform transform -translate-y-full bg-teal-400 rounded-md bg-opacity-60 group-hover:translate-y-0">
+              <div class="content">
+                <p class="mb-1 text-center">login_system</p>
+                <a href="https://github.com/mohmedsamy"><i class="flex items-center justify-center mt-3 text-3xl text-center fa-brands fa-github text-[#000]"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="relative p-1 mb-3 overflow-hidden bg-white rounded-sm group">
+            <img src="images/i/crud.png" class="w-[120%] h-auto rounded-sm" alt="work-01" />
+            <div class="absolute inset-0 flex items-center justify-center text-xl font-bold text-white transition-transform transform -translate-y-full bg-teal-400 rounded-md bg-opacity-60 group-hover:translate-y-0">
+              <div class="content">
+                <p class="mb-1 text-center">crud Web</p>
+                <a href="https://github.com/mohmedsamy"><i class="flex items-center justify-center mt-3 text-3xl text-center fa-brands fa-github text-[#000]"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="relative p-1 mb-3 overflow-hidden bg-white rounded-sm group">
+            <img src="images/i/qued.png" class="w-[120%] h-auto rounded-sm" alt="work-01" />
+            <div class="absolute inset-0 flex items-center justify-center text-xl font-bold text-white transition-transform transform -translate-y-full bg-teal-400 rounded-md bg-opacity-60 group-hover:translate-y-0">
+              <div class="content">
+                <p class="mb-1 text-center">Quotes-Web-main</p>
+                <a href="https://github.com/mohmedsamy"><i class="flex items-center justify-center mt-3 text-3xl text-center fa-brands fa-github text-[#000]"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="relative p-1 mb-3 overflow-hidden bg-white rounded-sm group">
+            <img src="images/i/cruds.png" class="w-[120%] h-auto rounded-sm" alt="work-01" />
+            <div class="absolute inset-0 flex items-center justify-center text-xl font-bold text-white transition-transform transform -translate-y-full bg-teal-400 rounded-md bg-opacity-60 group-hover:translate-y-0">
+              <div class="content">
+                <p class="mb-1 text-center">GRUDS</p>
+                <a href="https://github.com/mohmedsamy"><i class="flex items-center justify-center mt-3 text-3xl text-center fa-brands fa-github text-[#000]"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- ---------end portfolio ------------>
+
+      <!-- ---------start contact section ------------>
+      <div
+        id="contact"
+        class="w-full lg:px-[12%] py-10 px-[3%] scroll-mt-20 bg-[url('./images/footer-bg-color.png')] bg-no-repeat bg-[length:90%_auto] bg-center dark:bg-none"
+      >
+        <h2 class="text-5xl text-center font-Ovo">Get In Touch</h2>
+        <p class="mt-5 text-center font-Ovo">
+          I would love to hear from you! If you have any questions, comments, or
+          feedback, please use the form below.
+        </p>
+        <div class="grid grid-cols-1 gap-6 p-1 mt-10 md:grid-cols-3">
+          <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-lg dark:bg-[#161b22]">
+            <i class="mb-2 text-3xl text-green-600 fa-solid fa-phone"></i>
+            <span class="mb-1 text-xl font-semibold text-gray-800 dark:text-white">Phone</span>
+            <p class="text-gray-600 dark:text-white/80">+20 100 000 0000</p>
+          </div>
+          <a href="mailto:mohmedsamy@gmail.com">
+            <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-lg dark:bg-[#161b22]">
+              <i class="mb-2 text-3xl text-blue-600 fa-solid fa-envelope"></i>
+              <span class="mb-1 text-xl font-semibold text-gray-800 dark:text-white">Email</span>
+              <p class="text-gray-600 dark:text-white/80">mohmedsamy@gmail.com</p>
+            </div>
+          </a>
+          <div class="flex flex-col items-center p-4 bg-white rounded-lg shadow-lg dark:bg-[#161b22]">
+            <i class="mb-2 text-3xl text-red-600 fa-solid fa-location-dot"></i>
+            <span class="mb-1 text-xl font-semibold text-gray-800 dark:text-white">Address</span>
+            <p class="text-gray-600 dark:text-white/80">Egypt, Fayoum, Tamia</p>
+          </div>
+        </div>
+        <p class="mt-5 -mb-5 text-xl font-bold lg:ml-5 dark:text-white/90">Send Me An Email:</p>
+        <form
+          action="https://api.web3forms.com/submit"
+          method="post"
+          class="max-w-4xl mx-auto -mb-10"
+        >
+          <div class="grid grid-cols-1 gap-6 mt-10 mb-8 sm:grid-cols-2">
+            <input
+              type="hidden"
+              name="access_key"
+              value="f34a8582-8934-417f-b412-e8856fda995d"
+            />
+            <input
+              type="text"
+              placeholder="Your Name"
+              name="name"
+              class="transition flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-lg bg-white dark:bg-[#161b22] dark:border-white/90"
+              required
+            />
+            <input
+              type="text"
+              placeholder="Your Email"
+              name="email"
+              class="transition flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-lg bg-white dark:bg-[#161b22] dark:border-white/90"
+              required
+            />
+          </div>
+          <textarea
+            rows="6"
+            placeholder="Your Message"
+            name="message"
+            class="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-lg bg-white mb-6 dark:bg-[#161b22] dark:border-white/90"
+            required
+          ></textarea>
+          <button
+            class="flex items-center justify-between gap-2 px-5 py-3 mx-auto text-[18px] text-white duration-500 bg-black/80 rounded-lg w-max hover:bg-black dark:border-[0.5px] dark:bg-[#0d1117] dark:hover:bg-[#151b23f2]"
+          >
+            Submit Email
+            <img src="images/right-arrow-white.png" class="w-4" alt="" />
+          </button>
+        </form>
+        <div></div>
+      </div>
+    </div>
+    <!-- ---------end contact section ------------>
+
+    <!-- ---------start footer ------------>
+    <div class="w-full px-4 py-4 bg-zinc-100 border-t-2 border-[#eee] dark:bg-darkTheme">
+      <div class="flex flex-col items-center justify-around md:flex-row">
+        <p class="mt-4 mb-4 text-center md:text-left">
+          Copyright &copy; Mohmed Samy 2024, 2025
+        </p>
+        <div class="flex mt-4 space-x-6 social-links">
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/mohmedsamy/" class="duration-300 hover:scale-125">
+            <i class="text-4xl fa-brands fa-linkedin text-[#0077b5] hover:text-[#0e76a8]"></i>
+          </a>
+          <!-- GitHub -->
+          <a href="https://github.com/mohmedsamy" class="duration-300 hover:scale-125">
+            <i class="text-4xl fa-brands fa-github"></i>
+          </a>
+          <!-- WhatsApp -->
+          <a href="https://wa.me/+20100000000" class="duration-300 hover:scale-125">
+            <i class="text-4xl text-green-500 fa-brands fa-whatsapp hover:text-green-600"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- ---------end footer ------------>
+    <script src="script.js"></script>
+  </body>
+</html>

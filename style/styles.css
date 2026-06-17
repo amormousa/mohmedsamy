@@ -1,0 +1,8 @@
+.the-progress span {
+  width: 0;
+  transition: width 2s ease-in-out;
+}
+
+ .abdo .image{
+  filter: drop-shadow(0 0 0.75rem teal);
+}
